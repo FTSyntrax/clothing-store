@@ -7,6 +7,10 @@ header {
             margin-right: 10px;
             font-size: 15px;
             color: #333!important;
+            transition: color .2s ease;
+            &:hover {
+                color: #448bb8;
+            }
         }
     }
 }

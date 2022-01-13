@@ -1,0 +1,52 @@
+footer {
+    background-color: #dfdfdf;
+    padding: 25px 0;
+    font-family: "Roboto", sans-serif;
+    h6 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 1rem;
+    }
+    .footer-about {
+        p {
+            font-size: 15px;
+            color: #333;
+            font-weight: 400;
+            text-align: center;
+        }
+        .logo {
+            width: 200px;
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+    }
+    .footer-nav {
+        a {
+            color: #333;
+            padding-top: 0;
+            padding-left: 0;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+            transition: color .2s ease;
+
+            &:hover {
+                color: #448bb8;
+            }
+        }
+    }
+    .footer-socials {
+        a {
+            color: #333;
+            font-size: 30px;
+            display: inline-block;
+            margin-right: 20px;
+            transition: color .2s ease;
+            &:hover {
+                color: #448bb8;
+            }
+        }
+    }
+}
