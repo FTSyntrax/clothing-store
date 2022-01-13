@@ -15,19 +15,19 @@ export default class HomePage extends Component {
 							id: "1",
 							name: "Men",
 							image: "men.jpg",
-							url: "shop/men",
+							url: "/shop/men",
 						},
 						{
 							id: "2",
 							name: "Women",
 							image: "women.jpg",
-							url: "shop/women",
+							url: "/shop/women",
 						},
 						{
 							id: "3",
 							name: "Kids",
 							image: "kids.jpg",
-							url: "shop/kids",
+							url: "/shop/kids",
 						},
 					],
 				};

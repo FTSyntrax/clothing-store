@@ -31,10 +31,16 @@ footer {
             margin-bottom: 5px;
             font-size: 15px;
             transition: color .2s ease;
-
             &:hover {
                 color: #448bb8;
             }
+            &.disabled {
+                color: #333;
+                cursor: not-allowed;
+            }
+        }
+        .inner-links {
+            padding-left: 10px;
         }
     }
     .footer-socials {

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
 import { faInstagramSquare } from "@fortawesome/free-brands-svg-icons";
+import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -27,13 +28,24 @@ export default function footer() {
 						<Col xs={6} md={4} className="footer-nav">
 							<h6>Navigation</h6>
 							<Nav className="flex-column">
-								<Nav.Link href="/home">Home</Nav.Link>
-								<Nav.Link href="/contact" eventKey="link-contact">
-									Contact
-								</Nav.Link>
-								<Nav.Link href="/shop" eventKey="link-shop">
+								<LinkContainer to="/">
+									<Nav.Link>Home</Nav.Link>
+								</LinkContainer>
+								<LinkContainer to="/contact">
+									<Nav.Link eventKey="link-contact">Contact</Nav.Link>
+								</LinkContainer>
+								<Nav.Link eventKey="link-shop" className="disabled">
 									Shop
 								</Nav.Link>
+								<LinkContainer to="/shop/women" className="inner-links">
+									<Nav.Link eventKey="link-shop">- Women</Nav.Link>
+								</LinkContainer>
+								<LinkContainer to="/shop/men" className="inner-links">
+									<Nav.Link eventKey="link-shop">- Men</Nav.Link>
+								</LinkContainer>
+								<LinkContainer to="/shop/kids" className="inner-links">
+									<Nav.Link eventKey="link-shop">- Kids</Nav.Link>
+								</LinkContainer>
 							</Nav>
 						</Col>
 						<Col xs={6} md={4} className="footer-socials">
