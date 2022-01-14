@@ -17,7 +17,8 @@ export default class Shop extends Component {
 			products: PRODUCTS,
 			showModal: false,
 			modalId: null,
-			modalData: {}
+			modalData: {},
+			keyword: ''
 		};
 	}
 	showModal = (e, index) => {
@@ -26,34 +27,41 @@ export default class Shop extends Component {
 	hideModal = (e, index) => {
 		this.setState({ showModal: false });
 	};
+	handleChange = (e) => {
+		this.setState({keyword: e.target.value})
+	}
    
 	render() {
-		const { products } = this.state;
+		const { products, keyword } = this.state;
 		return (
 			<Container className="shop-container">
-				<SearchBox />
+				<SearchBox onChange={this.handleChange} />
 				<Row>
-					{products.map((product) => (
-						<Col md={4} lg={3} className="mb-4" key={product.id}>
-							<Button
-								className="product-button"
-								variant="outline-light"
-								onClick={() =>
-									this.setState({
-										showModal: true,
-										modalData: { name: product.name, price: product.price },
-									})
-								}
-							>
-								<ProductDetail
-									id={product.id}
-									name={product.name}
-									price={product.price}
-									imageUrl={product.imageUrl}
-								/>
-							</Button>
-						</Col>
-					))}
+					{products
+						.filter((product) => {
+							return product.name.toLowerCase().includes(keyword.toLowerCase());
+						})
+						.map((product) => (
+							<Col xs={6} md={4} lg={3} className="mb-4" key={product.id}>
+								<Button
+									className="product-button"
+									variant="outline-light"
+									onClick={() =>
+										this.setState({
+											showModal: true,
+											modalData: { name: product.name, price: product.price },
+										})
+									}
+								>
+									<ProductDetail
+										id={product.id}
+										name={product.name}
+										price={product.price}
+										imageUrl={product.imageUrl}
+									/>
+								</Button>
+							</Col>
+						))}
 				</Row>
 				<ProductModal
 					show={this.state.showModal}
