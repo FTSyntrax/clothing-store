@@ -2,7 +2,7 @@ import React from 'react'
 import './searchBox.scss';
 
 
-export default function searchBox({onChange}) {
+export default function searchBox({keyword, onChange}) {
     return (
             <div className="search-box">
                 <input
@@ -10,6 +10,7 @@ export default function searchBox({onChange}) {
                     className="form-control"
                     type="search"
                     placeholder="Search products"
+                    value={keyword}
                     onChange={onChange}
                 />
             </div>
