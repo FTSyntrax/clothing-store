@@ -1,8 +1,13 @@
 .shop-container {
-    .product-button {
-        width: 100%;
-        color: #333;
-        padding: 15px;
-        border-radius: 10px;
+    .add-product-box {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        transition: all .3s ease;
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+        }
     }
 }

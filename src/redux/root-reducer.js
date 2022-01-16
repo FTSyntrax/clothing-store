@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import { filterProductsReducer, loadProductsReducer } from "./products/products.reducer";
+import { filterProductsReducer, productsReducer } from "./products/products.reducer";
 
 export default combineReducers({
 	keyword: filterProductsReducer,
-	products: loadProductsReducer,
+	products: productsReducer,
 });
